@@ -1,11 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+	<script src="jquery-1.11.0.js"></script>
 	<link rel="stylesheet" href="stylesheets/base.css">
 	<link rel="stylesheet" href="stylesheets/skeleton.css">
 	<link rel="stylesheet" href="stylesheets/layout.css">
 	<link rel="stylesheet" href="stylesheets/animate.css">
 	<link rel="stylesheet" href="stylesheets/styles.css">
+	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen">
+	<script src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5" type="text/javascript"></script>
+	
 	<meta charset="UTF-8">
 	<title>Chuck Rea</title>
 </head>
@@ -14,7 +18,7 @@
 		
 		<div class="name">
 			<h1 id="my-name">Chuck Rea</h1>
-			<img src="assets/images/chuck_lego_head.png" height="175px">
+			<img id="face" src="assets/images/chuck_lego_head.png" height="175px">
 		</div>
 
 			<h3>Web Developer + Broadway Performer (Emeritus)</h3>	
@@ -22,7 +26,7 @@
 		<div class="sixteen columns">
 
 			<div class="four columns alpha">
-				<h4><a href="assets/chuck_rea_resume.pdf" target="_blank">Resume</a></h4>
+				<h4><a class="fancybox" href="assets/chuck_rea_resume.pdf">Resume</a></h4>
 			</div>
 
 			<div class="four columns alpha">
@@ -65,6 +69,15 @@
 </body>
 
 <script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+			width: 600,
+			height: 600,
+			padding: 0,
+			type: "iframe"
+		});
+	});
+
 	setTimeout(function(){
 		document.getElementById("my-name").style.color = "#ff4c00";
 		document.getElementById("my-name").className = "animated tada";
@@ -74,6 +87,18 @@
 		document.getElementById("my-name").style.color = "black";
 	}, 1800);
 
-
+	$(function(){
+		$('img').hover(
+			function(){
+			$('#face').attr("src", "assets/images/chuck_hiking_medium.png")
+					.attr("height", "175px")
+					// .attr("width", "175px")
+			}, 
+			function(){
+				$('#face').attr("src", "assets/images/chuck_lego_head.png")
+					.attr("height", "175px")
+			});
+	})
 </script>
+
 </html>
