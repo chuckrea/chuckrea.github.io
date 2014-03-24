@@ -21,12 +21,12 @@
 			<img id="face" src="assets/images/chuck_lego_head.png" height="175px">
 		</div>
 
-			<h3>Web Developer + Broadway Performer (Emeritus)</h3>	
+			<h3>Web Developer + ex-Broadway Performer (Emeritus)</h3>	
 			
 		<div class="sixteen columns">
 
 			<div class="four columns alpha">
-				<h4><a class="fancybox" href="assets/chuck_rea_resume.pdf">Resume</a></h4>
+				<h4><a class="fancybox" href="assets/chuck_rea_other_resume.pdf">Resume</a></h4>
 			</div>
 
 			<div class="four columns alpha">
@@ -52,6 +52,9 @@
 			<h4><a href="http://rubygems.org/gems/setlist" target="_blank">Setlist</a></h4>
 			<p>Setlist is a RubyGem that creates the basic scaffold and templates for a Sinatra application</p>
 
+			<h4><a href="http://giftadvisor.herokuapp.com" target="_blank">Giftr</a></h4>
+			<p>Giftr helps you FriendSource the perfect gift</p>
+
 			<h4><a href="http://wine-o.herokuapp.com/wtf" target="_blank">What The French?</a></h4>
 			<p>What The French? translates French wine information into a highly readable and slightly hilarious format</p>
 
@@ -69,25 +72,25 @@
 </body>
 
 <script type="text/javascript">
-	$(document).ready(function() {
+
+	setTimeout(function(){
+		$("#my-name").css("color", "#ff4c00");
+		$("#my-name").attr("class", "animated tada");
+	}, 800);
+
+	setTimeout(function(){
+		$("#my-name").css("color", "black");
+	}, 1800);
+
+	$(function(){
+		
 		$(".fancybox").fancybox({
 			width: 600,
 			height: 600,
 			padding: 0,
 			type: "iframe"
 		});
-	});
 
-	setTimeout(function(){
-		document.getElementById("my-name").style.color = "#ff4c00";
-		document.getElementById("my-name").className = "animated tada";
-	}, 800);
-
-	setTimeout(function(){
-		document.getElementById("my-name").style.color = "black";
-	}, 1800);
-
-	$(function(){
 		$('img').hover(
 			function(){
 			$('#face').attr("src", "assets/images/crazy_eyes.jpg")
@@ -97,6 +100,14 @@
 			function(){
 				$('#face').attr("src", "assets/images/chuck_lego_head.png")
 					.attr("height", "175px")
+			});
+
+		$('#my-name').hover(
+			function(){
+				$('#my-name').css("color", "#ff4c00")
+			},
+			function(){
+				$('#my-name').css("color", "black")
 			});
 	})
 </script>
