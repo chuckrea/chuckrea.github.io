@@ -72,6 +72,14 @@
 </body>
 
 <script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+			width: 600,
+			height: 600,
+			padding: 0,
+			type: "iframe"
+		});
+	});
 
 	setTimeout(function(){
 		$("#my-name").css("color", "#ff4c00");
@@ -83,19 +91,10 @@
 	}, 1800);
 
 	$(function(){
-		
-		$(".fancybox").fancybox({
-			width: 600,
-			height: 600,
-			padding: 0,
-			type: "iframe"
-		});
-
 		$('img').hover(
 			function(){
 			$('#face').attr("src", "assets/images/crazy_eyes.jpg")
 					.attr("height", "175px")
-					// .attr("width", "175px")
 			}, 
 			function(){
 				$('#face').attr("src", "assets/images/chuck_lego_head.png")
@@ -109,6 +108,7 @@
 			function(){
 				$('#my-name').css("color", "black")
 			});
+
 	})
 </script>
 
